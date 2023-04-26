@@ -1,24 +1,18 @@
 {% extends 'base.html' %}
 
-<title>My Investment Wallet</title>
-
 {% block content %}
 
-<h1>Asset Groups</h1>
-
+<h1>{{ asset_type }} Assets</h1>
 
 {% for asset in assets %}
-{% ifchanged asset.type %}
-
 <div class="card">
     <div class="card-content">
         <span class="card-title">
-            <a href="{% url 'asset_type' asset.type %}">{{ asset.type }}</a>
+            {{ asset.name }}
         </span>
+        <p>{{ asset.description }}</p>
     </div>
 </div>
-
-{% endifchanged %}
 {% endfor %}
 
 {% endblock %}

@@ -1,9 +1,26 @@
 {% extends 'base.html' %}
 
-<title>Home - My Investment Wallet</title>
+<title>My Investment Wallet</title>
 
 {% block content %}
 
-<h1>Investments</h1>
+<h1>All Investments</h1>
+
+
+{% for asset in assets %}
+
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">
+            {{asset.type}}
+        </span>
+        <p>name: {{asset.name}}</p>
+        <p>amount: {{asset.amount}}</p>
+        <p>description: {{asset.description}}</p>
+        <p>value: {{asset.value}}</p>
+    </div>
+</div>
+
+{% endfor %}
 
 {% endblock %}
