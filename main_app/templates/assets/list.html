@@ -3,6 +3,7 @@
 {% block content %}
 
 <h1>{{ asset_type }} Assets</h1>
+{{ total_amount }}
 
 {% for asset in assets %}
 <div class="card">
@@ -14,5 +15,9 @@
     </div>
 </div>
 {% endfor %}
+
+<p>Total amount: {{ total_amount }}</p>
+<p>Total value: {{ total_value }}</p>
+
 
 {% endblock %}
