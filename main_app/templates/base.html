@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block title %}
+    <title>My Investment Wallet</title>
+    {% endblock %}
+</head>
+<body>
+    <header class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper grey lighten-2">
+                <a class="left brand-logo" href="/">My Investment Wallet</a>
+                <ul class="right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/assets">Assets</a>
+                    </li>
+                    <li>
+                        <a href="/groups">Groups</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="page-footer grey lighten-2">
+        <p>Copyright &copy; All Rights Reserved My Investment Wallet 2023</p>
+    </footer>
+</body>
+</html>
