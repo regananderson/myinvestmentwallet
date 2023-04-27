@@ -21,13 +21,13 @@
                 <a class="left brand-logo" href="/">My Investment Wallet</a>
                 <ul class="right">
                     <li>
-                        <a href="/">Home</a>
+                        <a href="{% url 'home' %}">Home</a>
                     </li>
                     <li>
-                        <a href="/assets">Asset Categories</a>
+                        <a href="{% url 'assets_index' %}">Asset Categories</a>
                     </li>
                     <li>
-                        <a href="/all">Manage All Investments</a>
+                        <a href="{% url 'assets_detail' %}">Manage All Investments</a>
                     </li>
                     <li>
                         <a href="/form">Add An Investment</a>

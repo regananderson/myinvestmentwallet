@@ -10,7 +10,7 @@
 <h4>Wallet Value: {{total_value}}</h4>
 <hr>
 {% for asset in assets %}
-<a href="/investments/{{ asset.id }}">
+<a href="{% url 'investments_detail' asset.id %}">
 
 <div class="card">
     <div class="card-content">
