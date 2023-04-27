@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Asset
 
 
@@ -14,10 +15,6 @@ def home(request):
         'total_value': total_value,
     }
     return render(request, 'home.html', context)
-
-# def assets_index(request):
-#     assets = Asset.objects.all()
-#     return render(request, 'assets/index.html', {'assets': assets})
 
 def assets_index(request):
     assets = Asset.objects.all()
@@ -49,3 +46,19 @@ def asset_type(request, asset_type):
 def investments_detail(request, asset_id):
     asset = Asset.objects.get(id=asset_id)
     return render(request, 'investments/detail.html', {'asset':asset})
+
+class AssetCreate(CreateView):
+    model = Asset
+    fields = '__all__'
+    template_name = 'assets/main_app/asset_form.html'
+
+class AssetUpdate(UpdateView):
+    model = Asset
+    fields = '__all__'
+    template_name = 'assets/main_app/asset_form.html'
+
+class AssetDelete(DeleteView):
+    model = Asset
+    success_url = '/assets/'
+    template_name = 'assets/main_app/asset_confirm_delete.html'
+    

@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 
 class Asset(models.Model):
@@ -12,3 +12,5 @@ class Asset(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('investments_detail', kwargs={'asset_id': self.id})

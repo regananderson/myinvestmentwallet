@@ -17,6 +17,10 @@
         <p>description: {{asset.description}}</p>
         <p>value: {{asset.value}}</p>
     </div>
+    <div class="card-action">
+        <a href="{% url 'asset_update' asset.id %}">Update</a>
+        <a href="{% url 'asset_delete' asset.id %}">Delete</a>
+    </div>
 </div>
 
 {% endblock %}
