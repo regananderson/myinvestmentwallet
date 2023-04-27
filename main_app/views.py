@@ -46,3 +46,6 @@ def asset_type(request, asset_type):
     }
     return render(request, 'assets/list.html', context)
 
+def investments_detail(request, asset_id):
+    asset = Asset.objects.get(id=asset_id)
+    return render(request, 'investments/detail.html', {'asset':asset})

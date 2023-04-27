@@ -4,13 +4,9 @@
 
 {% block content %}
 
-<h1>All Investments</h1>
+<h1>Investment Information</h1>
 
-<h4>Dollars Invested: {{total_amount}}</h4>
-<h4>Wallet Value: {{total_value}}</h4>
 <hr>
-{% for asset in assets %}
-<a href="/investments/{{ asset.id }}">
 
 <div class="card">
     <div class="card-content">
@@ -23,6 +19,5 @@
         <p>value: {{asset.value}}</p>
     </div>
 </div>
-</a>
-{% endfor %}
+
 {% endblock %}
