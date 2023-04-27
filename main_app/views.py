@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Asset
-
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
 
 # Create your views here.
 
@@ -47,10 +48,29 @@ def investments_detail(request, asset_id):
     asset = Asset.objects.get(id=asset_id)
     return render(request, 'investments/detail.html', {'asset':asset})
 
+def signup(request):
+    error_message = ''
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('assets_detail')
+        else:
+            error_message = 'Invalid sign up - try again'
+    form = UserCreationForm() 
+    return render(request, 'registration/signup.html', {
+        'form': form, 
+        'error': error_message
+        })
+
 class AssetCreate(CreateView):
     model = Asset
-    fields = '__all__'
+    fields = ('type', 'name', 'amount', 'description','value')
     template_name = 'assets/main_app/asset_form.html'
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class AssetUpdate(UpdateView):
     model = Asset
