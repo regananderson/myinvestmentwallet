@@ -42,6 +42,7 @@ def asset_type(request, asset_type):
         'assets': assets,
         'total_amount': total_amount,
         'total_value': total_value,
+        'asset_type': asset_type
     }
     return render(request, 'assets/list.html', context)
 @login_required

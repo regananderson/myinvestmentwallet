@@ -5,10 +5,16 @@
 {% endblock %}
 
 {% block content %}
+<div class="home">
+<h1>Invest in your Future.</h1>
 
-<h1>Dollars Invested: {{ total_amount }}</h1>
-<h1>Wallet Value: {{ total_value }}</h1>
+<img src="/static/css/money.png" alt="money-pic">
 
+<div class="wallet-size">
+<h4>Dollars Invested: {{ total_amount }}</h4>
+<h4>Wallet Value: {{ total_value }}</h4>
+</div>
 
+</div>
 
 {% endblock %}

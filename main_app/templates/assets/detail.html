@@ -6,8 +6,10 @@
 
 <h1>All Investments</h1>
 
+<div class="wallet-size">
 <h4>Dollars Invested: {{total_amount}}</h4>
 <h4>Wallet Value: {{total_value}}</h4>
+</div>
 <hr>
 {% for asset in assets %}
 <a href="{% url 'investments_detail' asset.id %}">

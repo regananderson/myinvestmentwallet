@@ -3,6 +3,8 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 # Create your models here.
 
+
+
 class Asset(models.Model):
     type = models.CharField(max_length=100)
     name = models.CharField(max_length=100)

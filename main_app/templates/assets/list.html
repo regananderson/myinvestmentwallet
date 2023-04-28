@@ -2,9 +2,11 @@
 
 {% block content %}
 
-<h1>{{ asset_type }} Assets</h1>
+<h1>{{ asset_type }}</h1>
+<div class="wallet-size">
 <h3>Total amount: {{ total_amount }}</h3>
 <h3>Total value: {{ total_value }}</h3>
+</div>
 <hr>
 
 {% for asset in assets %}
